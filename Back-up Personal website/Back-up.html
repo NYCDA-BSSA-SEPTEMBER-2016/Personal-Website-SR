@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8"/>
 	<title>Sergio's Personal Website</title>
-	<link rel="stylesheet" href="blueberry.css"/>
 	<style type="text/css"></style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
-	<script src="jquery.blueberry.js"</script>
-	<script>
-	 $(window).load(function() {
-	 	$('blueberry').blueberry();
-	 });
-	 </script>
-	 <link href="back-up.css" rel="stylesheet" />
+	<link href="back-up.css" rel="stylesheet" />
+	<style type="text/css"> </style>
+
 </head>
 <body>
 	<header>
@@ -21,7 +16,7 @@
 			<a href="#" id="menuIcon"></a>
 			<ul>
 				<li><a href="#" class="current"> Home</a></li>
-				<li><a href="#"> About Me</a></li>
+				<li><a href="#AboutNav"> About Me</a></li>
 				<li><a href="#"> Projects</a></li>
 				<li><a href="#"> Contact</a></li>
 			</ul>
@@ -29,19 +24,18 @@
 	</header>
 	<div id="doc">
 		<div id="content">
-			<div class="blueBerry">
-				<ul class="slides">
-					<li><img src="blogger.jpg"> </li>	
-					<li><img src="1ZSNQTSXVM.jpg"> </li>	
-					<li><img src="Coding.jpg"> </li>
-					<li><img src="Photography.jpg"> </li>		
-				</ul>
-			</div>
+		
+  				<img class="mySlides" src="blogger.jpg" style="width:100%">
+  				<img class="mySlides" src="1ZSNQTSXVM.jpg" style="width:100%">
+  				<img class="mySlides" src="Coding.jpg" style="width:100%">
+  				<img class="mySlides" src="Photography.jpg" style="width:100%">
+		
+		</div>
 		</div>
 	</div>
-	<section>
+	<section id="aboutNav" class="resize">
 		<img src="Computerscreen.svg"> 
-		<h1>Coding</h1>
+		<h1>Coding!</h1>
 		<p>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -51,9 +45,9 @@
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</p>
 	</section>
-	<section>
+	<section class="resize">
 		<img src="camera.svg"> 
-		<h1>Photography</h1>
+		<h1>Photography!</h1>
 		<p>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -64,24 +58,29 @@
 		</p>
 	</section>
 	<div class="clear"></div>
-		<article>
-			<img src="me.jpg">
-		</article>
-			<aside>
+			<aside class="aboutMe">
 				<h2>About Me!</h2>
-					<p class="aboutMe">
+					   <ul id="listId">
+                    	 <li><strong>Lives in: </strong>Hilversum, the Netherlands</li>
+						            <li><strong>Birthday: </strong>August 6th</li>
+						            <li><strong>Nationality: </strong>Spanish</li>
+						            <li><strong>Age: </strong>22</li>
+					           </ul>
+                      <strong>
+                    I am half Spanish and half Filipino, born in Madrid and currently living in the Netherlands. Ever since I was little, I have always been fascinated by technology and how it goes to work. I have gained an interest in web development right after I received my Bachelor's degree. As I started my developers journey, I have gained more interests in expanding my skills and gaining more knowledge in this area. The exceptionally demanding web developing course has lead to me taking up challenging tasks, staying determinded, and most importantly not giving up. And also a daily overdose of coffee. Nonetheless, my interests keep on growing, awaiting new opportunities and challenges in the world of web design and development. 
+                     </strong></p>
 			</aside>
 		<div class="clear"></div>
-		<section>
-			<img src="camera.svg"> 
+		<section class="resize">
+ 
 			<h1>Projects</h1>
 			<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			</p>
 		</section>
-		<section>
-			<img src="camera.svg"> 
+		<section class="resize">
+
 			<h1>Projects</h1>
 			<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -90,26 +89,42 @@
 		</section>
 	<footer>
 		<section>
-			<h3><b>My Location</b></h3>
-			 <p><b>+31 (0)627091677</b></p><br><br>
+			<h3><b><u>My Location</u></b></h3>
 			 <p><b>Neuweg 427<br> 1215 JB Hilversum<br> the Netherlands</b></p>
+			 <p><b>+31 (0)627091677</b></p><br><br>
+
 
 		</section>
 		<section>
-			<h3>Connect with Me!</h3>
+
+			<h3><u>Connect with Me!</u></h3>
 				<ul class="social">
 					<li><a href="https://www.instagram.com/sergiofficial/"><img src="instagram-glyph.svg"></a></li>
-					<li><a href="https://www.facebook.com/sergio.reyes.338863"><img src="facebooklogo.svg"></a></li>
+					<li><a href="https://www.facebook.com/sergio.reyes.338863"><img  src="facebooklogo.svg"></a></li>
 				</ul>
 		</section>
 
-		<section>
-			<img src="#">
-		</section>
+	
 	</footer>
-	<footer class="Second">
-		<p>© copyright | Sergio Reyes Gomez de Liano</p>	
-	</footer>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+	<script type="text/javascript" src="backup.js"></script>
+	<script src="jquery-3.1.1.min.js"></script> 
 
 </body>
 </html>
